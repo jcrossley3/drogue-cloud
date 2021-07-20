@@ -231,8 +231,8 @@ async fn main() -> anyhow::Result<()> {
 
         #[cfg(feature = "forward")]
         let app = app
-            .data(awc::Client::new())
-            .data(forward_url.clone())
+            .app_data(awc::Client::new())
+            .app_data(forward_url.clone())
             .default_service(web::route().to(forward::forward));
 
         app

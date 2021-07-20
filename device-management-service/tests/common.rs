@@ -58,7 +58,7 @@ macro_rules! test {
                 // for the management service
                 .app_data(data.clone())
                 // for the admin service
-                .data(apps::WebData{
+                .app_data(apps::WebData{
                     service: service.clone(),
                 })
                 .wrap_fn(|req, srv|{
